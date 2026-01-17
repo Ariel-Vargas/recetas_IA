@@ -1,0 +1,14 @@
+# Ignorar archivos grandes para Vercel
+modelo_exportado/
+venv/
+*.pyc
+__pycache__/
+*.sqlite3
+.env
+.git/
+node_modules/
+Entrenamiento/
+recetas/venv/
+*.h5
+*.pkl
+*.log

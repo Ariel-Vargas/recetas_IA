@@ -1,0 +1,7 @@
+# Versión ligera para Vercel (sin TensorFlow/BERT por limitaciones de tamaño)
+Django==4.2.8
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+python-dotenv==1.0.0
+whitenoise==6.6.0
+gunicorn==21.2.0

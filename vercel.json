@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "recetas/config/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/recetas/static/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/recetas/config/wsgi.py"
+    },
+    {
+      "src": "/(.*\\.(html|css|js|jpg|jpeg|png|gif|svg|ico|webp))",
+      "dest": "/recetas/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/recetas/static/index.html"
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "config.settings",
+    "PYTHONPATH": "recetas",
+    "USE_MOCK_ML": "True"
+  },
+  "regions": ["iad1"]
+}

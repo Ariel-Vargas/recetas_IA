@@ -2,7 +2,15 @@
 URL configuration para la app de ingredientes
 """
 from django.urls import path
-from . import views
+import os
+
+# Usar views de Vercel si está en modo mock
+USE_MOCK = os.getenv('USE_MOCK_ML', 'False') == 'True'
+
+if USE_MOCK:
+    from . import views_vercel as views
+else:
+    from . import views
 
 app_name = 'ingredientes'
 

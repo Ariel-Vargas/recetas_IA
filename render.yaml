@@ -9,7 +9,7 @@ services:
     startCommand: "cd recetas && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.14
+        value: 3.13
       - key: SECRET_KEY
         generateValue: true
       - key: DEBUG

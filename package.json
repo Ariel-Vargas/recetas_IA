@@ -4,7 +4,7 @@
   "description": "Sistema inteligente de sustitución de ingredientes con BERT",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d app",
+    "deploy": "gh-pages -d recetas/static",
     "build": "echo 'Frontend listo para despliegue (archivos estáticos)'",
     "serve": "cd recetas && python manage.py runserver",
     "test": "cd recetas && python test_api.py"

@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TU-USUARIO/TU-REPO.git"
+    "url": "https://github.com/ariel-vargas/recetas_IA.git"
   },
   "bugs": {
-    "url": "https://github.com/TU-USUARIO/TU-REPO/issues"
+    "url": "https://github.com/ariel-vargas/recetas_IA/issues"
   },
-  "homepage": "https://TU-USUARIO.github.io/TU-REPO/"
+  "homepage": "https://ariel-vargas.github.io/recetas_IA/"
 }

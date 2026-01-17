@@ -151,3 +151,52 @@ if not MODEL_PATH.is_absolute():
 MODEL_WEIGHTS_PATH = MODEL_PATH / 'model_weights.h5'
 TOKENIZER_PATH = MODEL_PATH / 'tokenizer'
 LABEL_ENCODER_PATH = MODEL_PATH / 'label_encoder.pkl'
+
+# ============================================================================
+# CONFIGURACIÓN PARA RENDER.COM
+# ============================================================================
+
+# Configuración de base de datos para Render (PostgreSQL)
+if os.getenv('DATABASE_URL'):
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
+
+# Configuración de archivos estáticos para producción
+if not DEBUG:
+    # Añadir WhiteNoise middleware para servir archivos estáticos
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+    
+    # Configuración de archivos estáticos
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    
+    # Configuración de seguridad para producción
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
+# Actualizar ALLOWED_HOSTS para Render
+if os.getenv('RENDER'):
+    allowed_hosts = os.getenv('ALLOWED_HOSTS', '')
+    if allowed_hosts:
+        ALLOWED_HOSTS = [host.strip() for host in allowed_hosts.split(',')]
+    else:
+        ALLOWED_HOSTS = []
+    
+    # Añadir dominio de Render automáticamente
+    render_external_hostname = os.getenv('RENDER_EXTERNAL_HOSTNAME')
+    if render_external_hostname:
+        ALLOWED_HOSTS.append(render_external_hostname)
+    
+    # Siempre incluir .onrender.com
+    if '.onrender.com' not in ''.join(ALLOWED_HOSTS):
+        ALLOWED_HOSTS.append('.onrender.com')

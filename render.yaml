@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: recetas-ia
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: "./build.sh"
+    startCommand: "cd recetas && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: USE_MOCK_ML
+        value: False
+      - key: DJANGO_SETTINGS_MODULE
+        value: config.settings
+      - key: RENDER
+        value: True
+      - key: MODEL_PATH
+        value: /opt/render/project/src/modelo_exportado

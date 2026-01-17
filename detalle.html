@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle de receta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="detalle.css" />
+</head>
+
+<body>
+  <header class="top">
+    <a class="close" href="javascript:history.back()" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <span id="bcHome">Inicio</span>
+      <span class="sep">/</span>
+      <span id="bcPais">País</span>
+      <span class="sep">/</span>
+      <strong id="bcReceta">Receta</strong>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="left">
+      <div class="photo">
+        <img id="img" alt="Foto de la receta" />
+        <span class="tag" id="tagPais">País</span>
+      </div>
+    </section>
+
+    <section class="right">
+      <h1 class="title" id="title">Receta</h1>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">
+            <span class="spark">✨</span>
+            <h2>Ingredientes</h2>
+          </div>
+          <span class="count" id="count">0 artículos</span>
+        </div>
+
+        <ul class="list" id="list"></ul>
+
+        <div class="actions">
+          <button class="btn outline" id="btnSubs" type="button">Cambiar Sustitutos</button>
+          <button class="btn solid" id="btnGen" type="button">
+            Generar Receta
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2024 MundoRecetas. Todos los derechos reservados.</span>
+    <div class="links">
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Ayuda</a>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="detalle.js"></script>
+</body>
+</html>

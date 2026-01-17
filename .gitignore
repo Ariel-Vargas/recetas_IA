@@ -1,0 +1,59 @@
+# Modelos y datos pesados (NO subir - varios GB)
+modelo_exportado/
+Entrenamiento/
+
+# Entornos virtuales de Python
+venv/
+env/
+ENV/
+.venv/
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Base de datos local
+*.sqlite3
+*.db
+
+# Logs
+*.log
+
+# Archivos temporales y de caché
+*.tmp
+*.cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Archivos de modelo ML
+*.h5
+*.pkl
+*.pth
+*.onnx
+
+./node_modules/

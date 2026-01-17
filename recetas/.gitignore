@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/staticfiles/
+/media/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Model files - NO subir al repositorio (muy pesados)
+*.h5
+*.pkl
+modelo_exportado/
+../modelo_exportado/
+
+# Datos de entrenamiento
+Entrenamiento/
+../Entrenamiento/
+
+# Scripts de prueba y debug locales
+test_*.py
+check_*.py
+compare_*.py
+diagnose_*.py
+inspect_*.py
+verify_*.py
+*_SUMMARY.md
+*_CAMBIOS.md
+DEBUG_*.md
+SOLUCION_*.md
+NUEVO_*.md

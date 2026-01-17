@@ -80,7 +80,7 @@ h1{
   gap: 12px;
 }
 
-/* ✅ FILA ORDENADA */
+/* ✅ FILA ORDENADA - Sin imágenes */
 .row{
   background: var(--row);
   border: 1px solid var(--border);
@@ -88,21 +88,20 @@ h1{
   padding: 14px 16px;
   box-shadow: var(--shadow);
   display: grid;
-  grid-template-columns: 1fr 56px 1fr 28px;
+  grid-template-columns: 1fr 56px 1fr 28px; /* Sin espacio para thumbs */
   gap: 14px;
   align-items: center;
 }
 
-/* Bloques izquierda/derecha */
+/* Bloques izquierda/derecha - Sin imágenes */
 .side{
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 12px;
+  display: block; /* Cambio a block ya que no hay imágenes */
   align-items: center;
 }
 
-/* ✅ THUMB */
+/* ✅ THUMB - OCULTO */
 .thumb{
+  display: none; /* Ocultamos las imágenes */
   width: 52px;
   height: 52px;
   border-radius: 999px;
@@ -184,7 +183,7 @@ h1{
   text-transform: uppercase;
 }
 
-/* Para simular el “puntito” de color */
+/* Para simular el "puntito" de color */
 .chip::before{
   content:"";
   width: 8px;
@@ -253,14 +252,12 @@ h1{
 }
 
 .side.right{
-  display: grid;
-  grid-template-columns: 1fr 52px; 
-  gap: 14px;
+  display: block; /* Sin imágenes, solo texto */
   align-items: center;
 }
 
 .side.right .meta{
-  display: grid;
+  display: block;
   gap: 6px;            
   align-content: start;  
 }
@@ -270,10 +267,6 @@ h1{
 }
 
 .side.right .chip{
-  margin: 0;
-  justify-self: start;
-}
-
-.side.right .thumb{
-  justify-self: end;
+  margin: 0 0 6px 0;
+  display: inline-block;
 }

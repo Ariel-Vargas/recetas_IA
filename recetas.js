@@ -20,7 +20,17 @@ const paisKey = normalizeKey(paisRaw);
 
 titleEl.textContent = `Recetas de ${paisRaw}`;
 
-let recetas = (RECETAS_POR_PAIS[paisKey] || []);
+// Debug: verificar que RECETAS_POR_PAIS esté definido
+console.log("RECETAS_POR_PAIS disponible:", typeof window.RECETAS_POR_PAIS !== 'undefined');
+console.log("Buscando país:", paisRaw, "->", paisKey);
+if (typeof window.RECETAS_POR_PAIS !== 'undefined') {
+  console.log("Países disponibles:", Object.keys(window.RECETAS_POR_PAIS));
+  console.log("Recetas encontradas:", window.RECETAS_POR_PAIS[paisKey]?.length || 0);
+} else {
+  console.error("ERROR: RECETAS_POR_PAIS no está definido. Verifica que data.js se haya cargado correctamente.");
+}
+
+let recetas = (window.RECETAS_POR_PAIS?.[paisKey]) || [];
 let visibleCount = 6;
 
 function cardHTML(item){
@@ -61,7 +71,7 @@ function render(){
   gridEl.innerHTML = "";
 
   if (recetas.length === 0){
-    hintEl.textContent = `Todavía no hay recetas para “${paisRaw}”.`;
+    hintEl.textContent = `Todavía no hay recetas para "${paisRaw}".`;
     moreBtn.style.display = "none";
     return;
   }

@@ -12,7 +12,7 @@ function normalizeKey(str){
 const id = getParam("id");
 const paisParam = getParam("pais") || "";
 
-const receta = findRecetaById(id);
+const receta = window.findRecetaById(id);
 
 const imgEl = document.getElementById("img");
 const tagPaisEl = document.getElementById("tagPais");
@@ -98,7 +98,7 @@ btnSubs.addEventListener("click", () => {
   const selectedArr = Array.from(selected).sort((a,b)=>a-b);
 
   if (selectedArr.length === 0){
-    alert("Selecciona al menos 1 ingrediente para cambiar sustitutos.");
+    alert("Por favor, selecciona al menos un ingrediente para encontrar alternativas locales.");
     return;
   }
 

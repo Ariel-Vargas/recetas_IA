@@ -35,7 +35,7 @@ function init(){
   const id = getParam("id");
   const pais = getParam("pais") || "";
 
-  const receta = findRecetaById(id);
+  const receta = window.findRecetaById(id);
 
   const imgEl = document.getElementById("img");
   const pillPaisEl = document.getElementById("pillPais");

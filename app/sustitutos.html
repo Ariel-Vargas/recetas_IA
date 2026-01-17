@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Confirmación de sustituciones</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="sustitutos.css" />
+</head>
+<body>
+
+  <header class="top">
+    <a class="close" href="javascript:history.back()" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="wrap">
+    <h1>Confirmación de sustituciones</h1>
+    <p class="sub">Personalizando <span id="recetaNombre">tu receta</span></p>
+
+    <div class="section-head">
+      <h2>Ingredientes a reemplazar</h2>
+      <span class="badge" id="cambiosBadge">0 cambios</span>
+    </div>
+
+    <section class="list" id="subsList"></section>
+
+    <div class="actions">
+      <button class="btn ghost" id="btnCancel">Cancelar</button>
+      <button class="btn yellow" id="btnAccept">
+        Aceptar cambios
+        <span class="dot"></span>
+      </button>
+    </div>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="sustitutos.js"></script>
+</body>
+</html>

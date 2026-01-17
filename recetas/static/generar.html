@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Receta generada</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="generar.css" />
+</head>
+<body>
+
+  <a class="close" href="javascript:history.back()" aria-label="Cerrar">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <main class="page">
+    <section class="hero">
+      <div class="photo">
+        <img id="img" alt="Foto de la receta">
+        <span class="pill" id="pillPais">País</span>
+      </div>
+
+      <div class="titleWrap">
+        <h1 id="title">Receta</h1>
+      </div>
+    </section>
+
+    <section class="content">
+      <aside class="panel">
+        <div class="panelHead">
+          <h2>Ingredientes</h2>
+          <span class="count" id="count">0 artículos</span>
+        </div>
+        <ul class="ings" id="ings"></ul>
+      </aside>
+
+      <!-- Preparación -->
+      <section class="prep" id="prep"></section>
+    </section>
+  </main>
+
+  <script src="data.js?v=4"></script>
+  <script src="generar.js?v=4"></script>
+</body>
+</html>

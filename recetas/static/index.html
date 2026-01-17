@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recetas del Mundo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <main>
+    <section class="wrap" aria-label="Búsqueda de recetas por país">
+      <h1>¿Qué país quieres <span class="accent">saborear hoy?</span></h1>
+      <p class="subtitle">
+        Descubre sabores auténticos. Escribe un destino y comienza<br/>
+        tu viaje culinario desde tu cocina.
+      </p>
+
+      <form class="searchbar" id="searchForm" autocomplete="off">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+        <input
+          id="countryInput"
+          name="country"
+          type="text"
+          inputmode="text"
+          placeholder="Escribe un país (ej. México, Japón...)"
+          aria-label="Escribe un país"
+        />
+
+        <button class="btn" type="submit" aria-label="Ver recetas">
+          Ver recetas
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+
+      <div class="hint" id="hint"></div>
+    </section>
+  </main>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>

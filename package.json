@@ -1,0 +1,33 @@
+{
+  "name": "recetas-bert",
+  "version": "1.0.0",
+  "description": "Sistema inteligente de sustitución de ingredientes con BERT",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d app",
+    "build": "echo 'Frontend listo para despliegue (archivos estáticos)'",
+    "serve": "cd recetas && python manage.py runserver",
+    "test": "cd recetas && python test_api.py"
+  },
+  "keywords": [
+    "bert",
+    "ml",
+    "recetas",
+    "ingredientes",
+    "django",
+    "tensorflow"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TU-USUARIO/TU-REPO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TU-USUARIO/TU-REPO/issues"
+  },
+  "homepage": "https://TU-USUARIO.github.io/TU-REPO/"
+}

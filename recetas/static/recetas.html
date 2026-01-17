@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recetas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="recetas.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="back" href="index.html" aria-label="Volver">
+      
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+  </header>
+
+  <main class="container">
+    <section class="head">
+      <span class="flag" aria-hidden="true">🏳️</span>
+      <h1 id="title">Recetas</h1>
+    </section>
+
+    <section class="grid" id="grid"></section>
+
+    <div class="more">
+      <button class="more-btn" id="moreBtn" type="button">
+        Ver más recetas
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <p class="hint" id="hint"></p>
+    </div>
+  </main>
+
+  <script src="data.js?v=4"></script>
+  <script src="recetas.js?v=4"></script>
+</body>
+</html>

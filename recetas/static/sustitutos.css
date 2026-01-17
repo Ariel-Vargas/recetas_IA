@@ -1,0 +1,272 @@
+:root{
+  --bg: #f6f4f1;
+  --text: #111;
+  --muted: rgba(0,0,0,.55);
+  --border: rgba(0,0,0,.08);
+  --row: rgba(255,255,255,.70);
+  --row2: rgba(255,255,255,.55);
+  --shadow: 0 10px 22px rgba(0,0,0,.05);
+  --yellow: #f4d000;
+  --chip: rgba(0,0,0,.04);
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 50% 15%, #fff 0%, var(--bg) 60%);
+  color: var(--text);
+}
+
+.top{ padding: 18px; }
+
+.close{
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.75);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: var(--text);
+}
+.close svg{ width: 18px; height: 18px; }
+
+.wrap{
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 0 18px 28px;
+}
+
+h1{
+  margin: 6px 0 6px;
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sub{
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.section-head{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 12px;
+}
+
+.section-head h2{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.badge{
+  font-size: 11px;
+  font-weight: 900;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(244,208,0,.18);
+  border: 1px solid rgba(244,208,0,.32);
+}
+
+.list{
+  display: grid;
+  gap: 12px;
+}
+
+/* ✅ FILA ORDENADA - Sin imágenes */
+.row{
+  background: var(--row);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr 28px; /* Sin espacio para thumbs */
+  gap: 14px;
+  align-items: center;
+}
+
+/* Bloques izquierda/derecha - Sin imágenes */
+.side{
+  display: block; /* Cambio a block ya que no hay imágenes */
+  align-items: center;
+}
+
+/* ✅ THUMB - OCULTO */
+.thumb{
+  display: none; /* Ocultamos las imágenes */
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.08);
+  border: 2px solid rgba(255,255,255,.8);
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+.thumb.gray{
+  filter: grayscale(1);
+  opacity: .65;
+}
+.thumb.yellow{
+  border: 2px solid rgba(244,208,0,.95);
+  box-shadow: 0 10px 18px rgba(244,208,0,.18);
+}
+.thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ TEXTOS */
+.meta small{
+  display: block;
+  font-size: 10px;
+  color: rgba(0,0,0,.35);
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.meta strong{
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  margin-top: 3px;
+}
+
+.meta span{
+  display: block;
+  font-size: 12px;
+  color: rgba(0,0,0,.55);
+  margin-top: 3px;
+}
+
+/* ✅ CENTRO */
+.mid{
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.65);
+  display: grid;
+  place-items: center;
+  justify-self: center;
+}
+.mid svg{
+  width: 18px;
+  height: 18px;
+  opacity: .55;
+}
+
+/* ✅ CHIP ARRIBA (COMÚN, UMAMI...) */
+.chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid rgba(0,0,0,.06);
+  color: rgba(0,0,0,.62);
+  width: fit-content;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+/* Para simular el "puntito" de color */
+.chip::before{
+  content:"";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+}
+
+/* ✅ X remover */
+.remove{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.7);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.remove svg{ width: 14px; height: 14px; opacity: .55; }
+
+/* ✅ Acciones abajo */
+.actions{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.btn{
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 900;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn.ghost{
+  background: transparent;
+  border-color: rgba(0,0,0,.18);
+  color: rgba(0,0,0,.7);
+}
+
+.btn.yellow{
+  background: var(--yellow);
+  border-color: rgba(0,0,0,.06);
+  box-shadow: 0 12px 22px rgba(244,208,0,.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.85);
+}
+
+@media (max-width: 880px){
+  .row{ grid-template-columns: 1fr; }
+  .mid{ display: none; }
+  .remove{ justify-self: end; }
+}
+
+.side.right{
+  display: block; /* Sin imágenes, solo texto */
+  align-items: center;
+}
+
+.side.right .meta{
+  display: block;
+  gap: 6px;            
+  align-content: start;  
+}
+
+.side.right .meta strong{
+  line-height: 1.15;    
+}
+
+.side.right .chip{
+  margin: 0 0 6px 0;
+  display: inline-block;
+}
